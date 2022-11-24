@@ -5,8 +5,8 @@ using UnityEngine;
 public class Trigger : MonoBehaviour
 {
     AudioSource audiosource;
-    public AudioClip beforeClip;
-    public AudioClip afterClip;
+    public AudioClip transitionClip;
+    public AudioClip musicSountrack;
 
     public bool startMusic;
 
@@ -14,7 +14,7 @@ public class Trigger : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         Debug.Log(other.gameObject.name + " has entered " + this.gameObject.name);
-        audiosource.PlayOneShot(beforeClip, 0.7F);
+        audiosource.PlayOneShot(transitionClip, 0.7F);
         AudioDJ.isMusicPlaying = true;
         AudioDJ.currentBiome = this.gameObject.name;
 
@@ -28,7 +28,7 @@ public class Trigger : MonoBehaviour
     private void OnTriggerExit(Collider other)
     {
         audiosource.Stop();
-        audiosource.PlayOneShot(afterClip, 0.7F);
+        audiosource.PlayOneShot(musicSountrack, 0.7F);
         Debug.Log(other.gameObject.name + " has exit " + this.gameObject.name);
         
     }
