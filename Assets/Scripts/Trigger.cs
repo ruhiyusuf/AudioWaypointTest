@@ -13,24 +13,33 @@ public class Trigger : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log(other.gameObject.name + " has entered " + this.gameObject.name);
-        audiosource.PlayOneShot(transitionClip, 0.7F);
-        AudioDJ.isMusicPlaying = true;
-        AudioDJ.currentBiome = this.gameObject.name;
+        if (other.gameObject.name.Equals(AudioDJ.collidingObject))
+        {
+            Debug.Log(other.gameObject.name + " has entered " + this.gameObject.name);
+            audiosource.PlayOneShot(transitionClip, 0.7F);
+            AudioDJ.isMusicPlaying = true;
+            AudioDJ.currentBiome = this.gameObject.name;
+        }
 
     }
 
     private void OnTriggerStay(Collider other)
     {
-        Debug.Log(other.gameObject.name + " is still in " + this.gameObject.name);
+        if (other.gameObject.name.Equals(AudioDJ.collidingObject)) {
+            Debug.Log(other.gameObject.name + " is still in " + this.gameObject.name);
+        }
+
     }
 
     private void OnTriggerExit(Collider other)
     {
-        audiosource.Stop();
-        audiosource.PlayOneShot(musicSountrack, 0.7F);
-        Debug.Log(other.gameObject.name + " has exit " + this.gameObject.name);
-        
+        if (other.gameObject.name.Equals(AudioDJ.collidingObject))
+        {
+            audiosource.Stop();
+            audiosource.PlayOneShot(musicSountrack, 0.7F);
+            Debug.Log(other.gameObject.name + " has exit " + this.gameObject.name);
+        }
+
     }
     // Start is called before the first frame update
     void Start()
