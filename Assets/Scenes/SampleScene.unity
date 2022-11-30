@@ -491,8 +491,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e020788dbd4214a2ea40cbed230f9e3f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  transitionClip: {fileID: 0}
-  musicSountrack: {fileID: 0}
+  transitionClip: {fileID: 8300000, guid: 1e93b389531f54386b828737853a562a, type: 3}
+  musicSountrack: {fileID: 8300000, guid: a5d1644c978d64829b9ac0c17ffe2512, type: 3}
   startMusic: 0
 --- !u!65 &370682984
 BoxCollider:
@@ -786,6 +786,7 @@ GameObject:
   m_Component:
   - component: {fileID: 554770099}
   - component: {fileID: 554770098}
+  - component: {fileID: 554770100}
   m_Layer: 0
   m_Name: AudioDJ
   m_TagString: Untagged
@@ -819,6 +820,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &554770100
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 554770097}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 46fa3da39bdbb49babe1639515227e9a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &601356340
 GameObject:
   m_ObjectHideFlags: 0
@@ -1060,8 +1073,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e020788dbd4214a2ea40cbed230f9e3f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  transitionClip: {fileID: 0}
-  musicSountrack: {fileID: 0}
+  transitionClip: {fileID: 8300000, guid: 1e93b389531f54386b828737853a562a, type: 3}
+  musicSountrack: {fileID: 8300000, guid: 168656fb3917844f6ad0fea9d1160abc, type: 3}
   startMusic: 0
 --- !u!65 &601356345
 BoxCollider:
@@ -1459,8 +1472,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e020788dbd4214a2ea40cbed230f9e3f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  transitionClip: {fileID: 0}
-  musicSountrack: {fileID: 0}
+  transitionClip: {fileID: 8300000, guid: 1e93b389531f54386b828737853a562a, type: 3}
+  musicSountrack: {fileID: 8300000, guid: 914e58223d4cb400babca8856b7a7b6c, type: 3}
   startMusic: 0
 --- !u!65 &1166586290
 BoxCollider:
@@ -1779,8 +1792,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e020788dbd4214a2ea40cbed230f9e3f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  transitionClip: {fileID: 0}
-  musicSountrack: {fileID: 0}
+  transitionClip: {fileID: 8300000, guid: 1e93b389531f54386b828737853a562a, type: 3}
+  musicSountrack: {fileID: 8300000, guid: 914e58223d4cb400babca8856b7a7b6c, type: 3}
   startMusic: 0
 --- !u!65 &1244841193
 BoxCollider:

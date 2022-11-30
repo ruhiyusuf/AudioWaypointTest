@@ -57,8 +57,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets/Scripts/movement.cs" />
-    <Compile Include="Assets/Scripts/Trigger.cs" />
     <Compile Include="Assets/AudioDJ.cs" />
+    <Compile Include="Assets/Scripts/Trigger.cs" />
+    <Compile Include="Assets/Scripts/CrossFadeMusicManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">

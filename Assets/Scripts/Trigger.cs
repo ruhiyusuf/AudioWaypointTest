@@ -8,7 +8,9 @@ public class Trigger : MonoBehaviour
     public AudioClip transitionClip;
     public AudioClip musicSountrack;
 
-    public bool startMusic;
+    public int myIndex;
+
+    private bool entered;
 
 
     private void OnTriggerEnter(Collider other)
@@ -19,6 +21,15 @@ public class Trigger : MonoBehaviour
             audiosource.PlayOneShot(transitionClip, 0.7F);
             AudioDJ.isMusicPlaying = true;
             AudioDJ.currentBiome = this.gameObject.name;
+            if (!entered)
+            {
+                AudioDJ.prevBiomeIndex = AudioDJ.currBiomeIndex;
+                AudioDJ.currBiomeIndex = myIndex;
+                // Debug.Log("setting index");
+                entered = true;
+            }
+            
+            AudioDJ.stopMusic = true;
         }
 
     }
@@ -28,7 +39,7 @@ public class Trigger : MonoBehaviour
         if (other.gameObject.name.Equals(AudioDJ.collidingObject)) {
             Debug.Log(other.gameObject.name + " is still in " + this.gameObject.name);
         }
-
+        
     }
 
     private void OnTriggerExit(Collider other)
@@ -36,9 +47,18 @@ public class Trigger : MonoBehaviour
         if (other.gameObject.name.Equals(AudioDJ.collidingObject))
         {
             audiosource.Stop();
-            audiosource.PlayOneShot(musicSountrack, 0.7F);
+            if (AudioDJ.forward)
+            {
+                audiosource.PlayOneShot(musicSountrack, 0.7F);
+            } else {
+                AudioDJ.prevBiomeIndex = myIndex;
+                AudioDJ.currBiomeIndex = myIndex - 1;
+                AudioDJ.startMusic = true;
+            }
+            
             Debug.Log(other.gameObject.name + " has exit " + this.gameObject.name);
         }
+        entered = false;
 
     }
     // Start is called before the first frame update
@@ -46,20 +66,32 @@ public class Trigger : MonoBehaviour
     {
         
         audiosource = GetComponent<AudioSource>();
-        startMusic = false;
+        entered = false;
+        myIndex = AudioDJ.biomePosition.IndexOf(this.gameObject.name);
 
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (AudioDJ.currentBiome.Equals(this.gameObject.name))
-        {
-            startMusic = true;
-        } else if (startMusic == true)
-        {
+        //// startMusic = AudioDJ.currentBiome.Equals(this.gameObject.name);
+        //if (AudioDJ.currentBiome.Equals(this.gameObject.name))
+        //{
+        //    startMusic = true;
+        //} else if (startMusic == true)
+        //{
+        //    audiosource.Stop();
+        //    startMusic = false;
+        //}
+
+        if (AudioDJ.stopMusic && (myIndex == AudioDJ.prevBiomeIndex)) {
             audiosource.Stop();
-            startMusic = false;
+            AudioDJ.stopMusic = false;
+        }
+        if (AudioDJ.startMusic && (myIndex == AudioDJ.currBiomeIndex))
+        {
+            audiosource.PlayOneShot(musicSountrack, 0.7F);
+            AudioDJ.startMusic = false;
         }
     }
 }
