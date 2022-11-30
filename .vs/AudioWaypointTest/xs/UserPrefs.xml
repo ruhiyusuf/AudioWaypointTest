@@ -1,13 +1,21 @@
 ﻿<Properties StartupConfiguration="{C2EA3AAD-6523-E42C-59D5-6C0706D7083B}|">
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/AudioDJ.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/Trigger.cs">
     <Files>
-      <File FileName="Assets/Scripts/Trigger.cs" Line="31" Column="49" />
-      <File FileName="Assets/AudioDJ.cs" Line="10" Column="122" />
+      <File FileName="Assets/AudioDJ.cs" Line="24" Column="1" />
+      <File FileName="Assets/Scripts/Trigger.cs" Line="113" Column="2" />
+      <File FileName="Assets/Scripts/CrossFadeMusicManager.cs" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/movement.cs" Line="1" Column="1" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
-          <Node name="AudioWaypointTest" expanded="True" selected="True" />
+          <Node name="AudioWaypointTest" expanded="True">
+            <Node name="Assets" expanded="True">
+              <Node name="Scripts" expanded="True">
+                <Node name="Trigger.cs" selected="True" />
+              </Node>
+            </Node>
+          </Node>
         </State>
       </Pad>
     </Pads>
